@@ -62,6 +62,20 @@ const Signup = () => {
         }
     };
 
+    const handleGoogleLogin = async () => {
+        setLoading(true);
+        const { error } = await supabase.auth.signInWithOAuth({
+            provider: 'google',
+            options: {
+                redirectTo: window.location.origin
+            }
+        });
+        if (error) {
+            setError(error.message);
+            setLoading(false);
+        }
+    };
+
     return (
         <div className="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-2xl overflow-hidden font-display transition-colors duration-300">
             <main className="flex-1 flex flex-col p-8 items-center justify-center gap-6 animate-slide-up">
@@ -142,6 +156,24 @@ const Signup = () => {
                 <p className="text-sm text-slate-500 dark:text-slate-400">
                     Já tem uma conta? <Link to="/login" className="text-primary font-bold hover:underline">Entre aqui</Link>
                 </p>
+
+                {/* Social Login (Bonus) */}
+                <div className="w-full flex flex-col gap-3 mt-2">
+                    <div className="flex items-center gap-3">
+                        <div className="h-px bg-slate-200 dark:bg-slate-800 flex-1"></div>
+                        <span className="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Ou continue com</span>
+                        <div className="h-px bg-slate-200 dark:bg-slate-800 flex-1"></div>
+                    </div>
+                    <button
+                        type="button"
+                        onClick={handleGoogleLogin}
+                        disabled={loading}
+                        className="w-full flex items-center justify-center gap-3 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 py-3.5 rounded-2xl text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors disabled:opacity-50"
+                    >
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" className="size-5" alt="Google" />
+                        Google
+                    </button>
+                </div>
             </main>
         </div>
     );
