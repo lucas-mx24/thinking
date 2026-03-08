@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#11d442",
+                "background-light": "#f6f8f6",
+                "background-dark": "#102215",
+              },
+              fontFamily: {
+                "display": ["Manrope"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+      </script>
+<title>Meus Pensamentos - Login</title>
+<style>
+        body {
+            min-height: 100dvh;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<header class="flex items-center justify-end p-6">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full hover:bg-primary/10 transition-colors text-primary font-bold text-sm">
+<span class="material-symbols-outlined text-sm">language</span>
+            PT-BR / EN-US
+        </button>
+</header>
+<main class="flex-1 flex flex-col items-center justify-center px-6 pb-12">
+<div class="w-full max-w-[420px] space-y-8">
+<div class="text-center space-y-2">
+<div class="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-xl mb-4 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white text-3xl">edit_note</span>
+</div>
+<h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Meus Pensamentos</h1>
+<p class="text-slate-500 dark:text-slate-400">Organize suas ideias de forma simples</p>
+</div>
+<form class="space-y-5">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1">E-mail</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">mail</span>
+<input class="w-full pl-12 pr-4 py-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none" placeholder="seu@email.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between ml-1">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Senha</label>
+<a class="text-xs font-medium text-primary hover:underline" href="#">Esqueci minha senha</a>
+</div>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">lock</span>
+<input class="w-full pl-12 pr-12 py-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none" placeholder="Sua senha" type="password"/>
+<button class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors" type="button">
+                            visibility
+                        </button>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-[0.98]" type="submit">
+                    Entrar
+                </button>
+</form>
+<p class="text-center text-sm text-slate-500 dark:text-slate-400 py-4">
+                Não tem uma conta? 
+                <a class="text-primary font-bold hover:underline" href="#">Criar conta</a>
+</p>
+</div>
+</main>
+<div class="hidden lg:block fixed bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-20"></div>
+
+</body></html>

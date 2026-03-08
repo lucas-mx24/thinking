@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Criar Conta - Meus Pensamentos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#11d442",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102215",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            min-height: 100dvh;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<header class="flex items-center p-4 pb-2 justify-between">
+<div class="w-12"></div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
+                Meus Pensamentos
+            </h2>
+<div class="flex w-fit items-center justify-end cursor-pointer">
+<span class="material-symbols-outlined text-primary text-xl mr-1">language</span>
+<p class="text-primary text-sm font-bold leading-normal tracking-[0.015em] shrink-0">PT-BR / EN-US</p>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center justify-center px-4 py-8">
+<div class="w-full max-w-[480px]">
+<div class="text-center mb-8">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-primary/10 mb-6">
+<span class="material-symbols-outlined text-primary text-4xl">edit_note</span>
+</div>
+<h1 class="text-slate-900 dark:text-slate-100 tracking-tight text-[32px] font-extrabold leading-tight">Criar Conta</h1>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal mt-2">Comece a organizar suas ideias agora mesmo.</p>
+</div>
+<form class="space-y-4">
+<div class="flex flex-col w-full">
+<label class="text-slate-900 dark:text-slate-100 text-sm font-semibold leading-normal pb-2 px-1">Nome completo</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl">person</span>
+<input class="form-input flex w-full rounded-lg text-slate-900 border border-primary/20 bg-white focus:ring-2 focus:ring-primary focus:border-primary h-14 pl-12 pr-4 placeholder:text-slate-400 text-base font-normal" placeholder="Digite seu nome completo" type="text"/>
+</div>
+</div>
+<div class="flex flex-col w-full">
+<label class="text-slate-900 dark:text-slate-100 text-sm font-semibold leading-normal pb-2 px-1">E-mail</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl">mail</span>
+<input class="form-input flex w-full rounded-lg text-slate-900 border border-primary/20 bg-white focus:ring-2 focus:ring-primary focus:border-primary h-14 pl-12 pr-4 placeholder:text-slate-400 text-base font-normal" placeholder="exemplo@email.com" type="email"/>
+</div>
+</div>
+<div class="flex flex-col w-full">
+<label class="text-slate-900 dark:text-slate-100 text-sm font-semibold leading-normal pb-2 px-1">Senha</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl">lock</span>
+<input class="form-input flex w-full rounded-lg text-slate-900 border border-primary/20 bg-white focus:ring-2 focus:ring-primary focus:border-primary h-14 pl-12 pr-12 placeholder:text-slate-400 text-base font-normal" placeholder="••••••••" type="password"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl cursor-pointer">visibility</span>
+</div>
+</div>
+<div class="flex flex-col w-full pb-4">
+<label class="text-slate-900 dark:text-slate-100 text-sm font-semibold leading-normal pb-2 px-1">Confirmar Senha</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl">lock_reset</span>
+<input class="form-input flex w-full rounded-lg text-slate-900 border border-primary/20 bg-white focus:ring-2 focus:ring-primary focus:border-primary h-14 pl-12 pr-4 placeholder:text-slate-400 text-base font-normal" placeholder="Repita sua senha" type="password"/>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-opacity-90 transition-all text-white h-14 rounded-lg font-bold text-lg shadow-lg shadow-primary/20" type="submit">
+                        Cadastrar
+                    </button>
+</form>
+<div class="mt-8 text-center">
+<p class="text-slate-600 dark:text-slate-400 text-sm">
+                        Já tenho uma conta? 
+                        <a class="text-primary font-bold hover:underline ml-1" href="#">Fazer login</a>
+</p>
+</div>
+</div>
+</main>
+<footer class="p-6 text-center">
+<p class="text-slate-400 text-xs">
+                © 2024 Meus Pensamentos. Todos os direitos reservados.
+            </p>
+</footer>
+</div>
+
+</body></html>

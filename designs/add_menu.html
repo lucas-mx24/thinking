@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#11d442",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102215",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col relative overflow-hidden">
+<!-- Header -->
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 border-b border-primary/10 justify-between sticky top-0 z-10">
+<div class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 px-3">Meus Pensamentos</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/10 text-primary">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</header>
+<!-- Content Area (Slightly Dimmed due to overlay) -->
+<main class="flex-1 overflow-y-auto pb-24 relative">
+<!-- Overlay Effect -->
+<div class="absolute inset-0 bg-slate-900/40 z-20"></div>
+<section class="p-4">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight mb-4">Recentes</h3>
+<div class="space-y-4">
+<!-- Card 1 -->
+<div class="flex items-stretch justify-between gap-4 rounded-xl bg-white dark:bg-slate-800 p-4 shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex flex-col gap-1 flex-[2_2_0px]">
+<p class="text-primary text-xs font-semibold uppercase tracking-wider">Hoje, 10:30</p>
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">Ideia de Projeto</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal line-clamp-2">Explorar novas paletas de cores e tipografias para o dashboard...</p>
+</div>
+<div class="w-24 h-24 bg-center bg-no-repeat bg-cover rounded-lg flex-shrink-0" data-alt="Abstract colorful art palette and brushes" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZCKbEvXU6vzKqhfFLcFSfIYyOVEiRtxkRGP57dRJySIo9wsfaoFtP8awFTjN1oZnkS8PXyiP8kLutj_5BbZhAXkU0M7OP6x_KeTkTgk-MBNjAo8kWBmvlEG2oYpNEBrQzQQG7oowXvYV1nP-2DnXHlW5qjpzmBRj1WUpBqxgJqUK4DFsjP1PMltIzLXyWapUh9Z0Zy2mIHISuxTBhtSmmndGM5m-OfLOkxtGFtn0hJmG5MVzgby6d5W3y_zE3reNMTQPL1KCUPFMP");'></div>
+</div>
+<!-- Card 2 -->
+<div class="flex items-stretch justify-between gap-4 rounded-xl bg-white dark:bg-slate-800 p-4 shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex flex-col gap-1 flex-[2_2_0px]">
+<p class="text-primary text-xs font-semibold uppercase tracking-wider">Ontem, 18:45</p>
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">Lista de Compras</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">Leite, pão, ovos, café orgânico...</p>
+</div>
+<div class="w-24 h-24 bg-center bg-no-repeat bg-cover rounded-lg flex-shrink-0" data-alt="Fresh groceries in a paper bag" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDaAa_isayX8xcw66u9E7HFUoCu_ezrxvF-ooDDed7YV-bI82w0WPSW-AoViuE2Z27ImVsIIlUkpyEe1_zWkufHtUSRzhnCvu_T8YMjAATH75Ta9AtPngE9tGfSLa0NvuDEVrmtMJe22SF4y4Qg1KHfU7ed7AhqAgh8Vvgp6uyx-ksJ2_Wy566cLXLht-4syngNkn3k4HZ3hMeTHwDaGy-uZJv8trJZeKHwDE-R65t_LPw5ZeRwYlHa1zXXJF8IkQAXsMTSeDxbTSiE");'></div>
+</div>
+<!-- Card 3 -->
+<div class="flex items-stretch justify-between gap-4 rounded-xl bg-white dark:bg-slate-800 p-4 shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex flex-col gap-1 flex-[2_2_0px]">
+<p class="text-primary text-xs font-semibold uppercase tracking-wider">05 Out, 09:12</p>
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">Reflexão Matinal</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">A gratidão transforma o que temos em suficiente.</p>
+</div>
+<div class="w-24 h-24 bg-center bg-no-repeat bg-cover rounded-lg flex-shrink-0" data-alt="Peaceful sunrise over a calm lake" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC71ZU0I66Vt5NXIcXmscp2eQP-pSaGmsttvWkzE9BRvCnrss5PrTcemzhihJUoYSvrAn_RX_dHnQfmiuvBz7nYqwL0UGHTKUkZt0ezruJ4OEz-GbqZmUHBnXppqQIGKKBVIIwVy_f2Hh-T1rC5ZiEhO3fGef6twcgFysekn7Gch-BDBIDMY687cjRbIMADGS2atFm-r5q4Zt1U00pvcjsEX5DtZ8rjLqI0UyFYn3-On_teKh6-QhIOBV0mLQG5zUrXCBploXZDGBns");'></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Speed Dial Menu (Visible state) -->
+<div class="fixed bottom-24 right-6 z-30 flex flex-col items-end gap-4">
+<!-- Option 3 -->
+<div class="flex items-center gap-3">
+<span class="bg-white dark:bg-slate-800 px-3 py-1.5 rounded-lg shadow-lg text-sm font-bold text-slate-700 dark:text-slate-200">Ideia Rápida</span>
+<button class="w-12 h-12 rounded-full bg-white dark:bg-slate-800 text-primary shadow-lg flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined">lightbulb</span>
+</button>
+</div>
+<!-- Option 2 -->
+<div class="flex items-center gap-3">
+<span class="bg-white dark:bg-slate-800 px-3 py-1.5 rounded-lg shadow-lg text-sm font-bold text-slate-700 dark:text-slate-200">Lembrete</span>
+<button class="w-12 h-12 rounded-full bg-white dark:bg-slate-800 text-primary shadow-lg flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+<!-- Option 1 -->
+<div class="flex items-center gap-3">
+<span class="bg-white dark:bg-slate-800 px-3 py-1.5 rounded-lg shadow-lg text-sm font-bold text-slate-700 dark:text-slate-200">Nova Nota</span>
+<button class="w-12 h-12 rounded-full bg-white dark:bg-slate-800 text-primary shadow-lg flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+</div>
+<!-- Main FAB (Open State with 'X' or Rotate) -->
+<button class="fixed bottom-6 right-6 z-30 w-16 h-16 rounded-full bg-primary text-white shadow-xl flex items-center justify-center hover:scale-105 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-3xl rotate-45">add</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 px-4 pb-6 pt-2 z-10">
+<div class="flex gap-2 max-w-md mx-auto">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<p class="text-[10px] font-bold uppercase tracking-widest">Início</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">description</span>
+<p class="text-[10px] font-bold uppercase tracking-widest">Notas</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">search</span>
+<p class="text-[10px] font-bold uppercase tracking-widest">Busca</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<p class="text-[10px] font-bold uppercase tracking-widest">Perfil</p>
+</a>
+</div>
+</nav>
+</body></html>

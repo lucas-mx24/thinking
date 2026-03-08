@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#11d442",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102215",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen font-display">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-xl overflow-x-hidden sepia-[0.25]">
+<header class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 justify-between border-b border-primary/10">
+<div class="flex items-center gap-3">
+<div class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+</div>
+<h1 class="text-xl font-bold leading-tight tracking-tight">Meus Pensamentos</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex size-10 items-center justify-center rounded-full bg-transparent hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</button>
+<div class="size-10 rounded-full overflow-hidden border-2 border-primary/20">
+<img alt="Profile" data-alt="Close up portrait of a smiling person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsV0bYkdKnHBrUEXRDT6L1v3thQq_H3eyyanpih1WuDJBFkDYYqEAr18R1NNh3kX39ZJDeKhLNM8li5kJ_JJglF2u8Je5IDg2OaVtbj2BbGlyV5bsI1w9UXp_UZUCL5_LU_hvF5dYzMXyizrMQXmS5R7_5GZ7hBdluBDbkdqPHnVOeWeqGaExpDqo56FQAJI4gMXXy79cg24DwGJndRAXAUerC3i4G_RJqmXgHf0hBevWEaUjAib31QZ0tym12taLYtnCtvO3Mqk94"/>
+</div>
+</div>
+</header><div class="px-4 py-2 border-b border-primary/5 bg-white/50 dark:bg-slate-900/30 flex items-center justify-between overflow-x-auto no-scrollbar gap-4 text-[11px] font-medium text-slate-600 dark:text-slate-400">
+<div class="flex items-center gap-2 shrink-0">
+<span class="material-symbols-outlined text-sm">language</span>
+<button class="text-primary font-bold">PT-BR</button>
+<span class="text-slate-300">/</span>
+<button class="hover:text-primary transition-colors">EN-US</button>
+</div>
+<div class="flex items-center gap-4 shrink-0">
+<div class="flex items-center gap-1.5 cursor-pointer hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">dark_mode</span>
+<span>Modo Escuro</span>
+<div class="w-6 h-3.5 bg-slate-200 dark:bg-primary/40 rounded-full relative">
+<div class="absolute right-0.5 top-0.5 w-2.5 h-2.5 bg-white dark:bg-primary rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center gap-1.5 cursor-pointer hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span>Proteção Ocular</span>
+<div class="w-6 h-3.5 bg-slate-200 rounded-full relative">
+<div class="absolute left-0.5 top-0.5 w-2.5 h-2.5 bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<nav class="flex overflow-x-auto no-scrollbar px-4 py-3 gap-3">
+<button class="flex items-center justify-center rounded-full px-5 py-2 bg-primary text-background-dark text-sm font-bold whitespace-nowrap">Tudo</button>
+<button class="flex items-center justify-center rounded-full px-5 py-2 bg-primary/10 text-slate-700 dark:text-slate-300 text-sm font-medium whitespace-nowrap hover:bg-primary/20">Reflexão</button>
+<button class="flex items-center justify-center rounded-full px-5 py-2 bg-primary/10 text-slate-700 dark:text-slate-300 text-sm font-medium whitespace-nowrap hover:bg-primary/20">Ideia</button>
+<button class="flex items-center justify-center rounded-full px-5 py-2 bg-primary/10 text-slate-700 dark:text-slate-300 text-sm font-medium whitespace-nowrap hover:bg-primary/20">Tarefas</button>
+<button class="flex items-center justify-center rounded-full px-5 py-2 bg-primary/10 text-slate-700 dark:text-slate-300 text-sm font-medium whitespace-nowrap hover:bg-primary/20">Pessoal</button>
+</nav>
+<main class="flex-1 p-4">
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-3 p-4 bg-white dark:bg-slate-900/50 rounded-xl border border-primary/5 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start">
+<span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-primary/20 text-primary rounded">Reflexão</span>
+<span class="text-[10px] text-slate-400 font-medium">Oct 24</span>
+</div>
+<div>
+<h3 class="font-bold text-sm mb-1">Morning Peace</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-3 leading-relaxed">Today I felt a sense of peace that I haven't experienced in a while. The garden looks beautiful in the morning mist...</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-4 bg-white dark:bg-slate-900/50 rounded-xl border border-primary/5 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start">
+<span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-600 rounded">Ideia</span>
+<span class="text-[10px] text-slate-400 font-medium">Oct 23</span>
+</div>
+<div>
+<h3 class="font-bold text-sm mb-1">App Vision</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-3 leading-relaxed">A minimalist note-taking app that focuses on calm interactions and clean aesthetics. No clutter, just flow.</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-4 bg-white dark:bg-slate-900/50 rounded-xl border border-primary/5 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start">
+<span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-blue-100 text-blue-600 rounded">Tarefas</span>
+<span class="text-[10px] text-slate-400 font-medium">Oct 22</span>
+</div>
+<div>
+<h3 class="font-bold text-sm mb-1">Weekly Groceries</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-3 leading-relaxed">Milk, Eggs, Whole grain bread, Organic Coffee beans, Fresh basil, and Tomatoes for the pasta.</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-4 bg-white dark:bg-slate-900/50 rounded-xl border border-primary/5 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start">
+<span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-primary/20 text-primary rounded">Reflexão</span>
+<span class="text-[10px] text-slate-400 font-medium">Oct 21</span>
+</div>
+<div>
+<h3 class="font-bold text-sm mb-1">Consciousness</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-3 leading-relaxed">The nature of consciousness is like a river, always flowing, never the same twice. Observation changes the flow.</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-4 bg-white dark:bg-slate-900/50 rounded-xl border border-primary/5 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start">
+<span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-600 rounded">Ideia</span>
+<span class="text-[10px] text-slate-400 font-medium">Oct 20</span>
+</div>
+<div>
+<h3 class="font-bold text-sm mb-1">Photo Project</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-3 leading-relaxed">Capture the same street corner every day at sunset for an entire year to see the seasonal shifts.</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-4 bg-white dark:bg-slate-900/50 rounded-xl border border-primary/5 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start">
+<span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-purple-100 text-purple-600 rounded">Pessoal</span>
+<span class="text-[10px] text-slate-400 font-medium">Oct 19</span>
+</div>
+<div>
+<h3 class="font-bold text-sm mb-1">Dream Journal</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-3 leading-relaxed">I was flying over a forest of neon trees. The air felt cold but refreshing. Someone was calling my name...</p>
+</div>
+</div>
+</div>
+</main>
+<div class="fixed bottom-24 right-6">
+<button class="flex size-14 items-center justify-center rounded-full bg-primary text-background-dark shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[28px]">add</span>
+</button>
+</div>
+<nav class="sticky bottom-0 w-full bg-background-light dark:bg-background-dark border-t border-primary/10 flex justify-around items-center py-3 px-2">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-[24px]">note_alt</span>
+<span class="text-[10px] font-bold">Notas</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">star</span>
+<span class="text-[10px] font-medium">Favoritos</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">archive</span>
+<span class="text-[10px] font-medium">Arquivo</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">account_circle</span>
+<span class="text-[10px] font-medium">Perfil</span>
+</a>
+</nav>
+</div>
+</body></html>
