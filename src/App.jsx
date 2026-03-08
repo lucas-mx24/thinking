@@ -16,14 +16,18 @@ const App = () => {
     const [eyeProtection, setEyeProtection] = useState(false);
     const [user, setUser] = useState(null);
 
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
         // Handle auth state
         supabase.auth.getSession().then(({ data: { session } }) => {
             setUser(session?.user ?? null);
+            setLoading(false);
         });
 
         const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
             setUser(session?.user ?? null);
+            setLoading(false);
         });
 
         return () => subscription.unsubscribe();
@@ -37,6 +41,28 @@ const App = () => {
         }
     }, [darkMode]);
 
+    if (loading) {
+        return (
+            <div className="flex h-screen items-center justify-center bg-background-light dark:bg-background-dark">
+                <div className="size-10 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+            </div>
+        );
+    }
+
+    const ProtectedRoute = ({ children }) => {
+        if (!user) {
+            return <Navigate to="/login" replace />;
+        }
+        return children;
+    };
+
+    const PublicRoute = ({ children }) => {
+        if (user) {
+            return <Navigate to="/" replace />;
+        }
+        return children;
+    };
+
     return (
         <Router>
             <div className={eyeProtection ? 'eye-protection-active' : ''}>
@@ -44,43 +70,45 @@ const App = () => {
                     <Route
                         path="/"
                         element={
-                            <Dashboard
-                                darkMode={darkMode}
-                                setDarkMode={setDarkMode}
-                                eyeProtection={eyeProtection}
-                                setEyeProtection={setEyeProtection}
-                                user={user}
-                            />
+                            <ProtectedRoute>
+                                <Dashboard
+                                    darkMode={darkMode}
+                                    setDarkMode={setDarkMode}
+                                    eyeProtection={eyeProtection}
+                                    setEyeProtection={setEyeProtection}
+                                    user={user}
+                                />
+                            </ProtectedRoute>
                         }
                     />
-                    <Route path="/create" element={<CreateNote user={user} />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/signup" element={<Signup />} />
-                    <Route path="/recovery" element={<PasswordRecovery />} />
+                    <Route path="/create" element={<ProtectedRoute><CreateNote user={user} /></ProtectedRoute>} />
+                    <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
+                    <Route path="/signup" element={<PublicRoute><Signup /></PublicRoute>} />
+                    <Route path="/recovery" element={<PublicRoute><PasswordRecovery /></PublicRoute>} />
                     <Route path="/confirmation" element={<EmailConfirmation />} />
                     <Route
                         path="/settings"
                         element={
-                            <Settings
-                                darkMode={darkMode}
-                                setDarkMode={setDarkMode}
-                                eyeProtection={eyeProtection}
-                                setEyeProtection={setEyeProtection}
-                            />
+                            <ProtectedRoute>
+                                <Settings
+                                    darkMode={darkMode}
+                                    setDarkMode={setDarkMode}
+                                    eyeProtection={eyeProtection}
+                                    setEyeProtection={setEyeProtection}
+                                />
+                            </ProtectedRoute>
                         }
                     />
                     <Route
                         path="/profile"
                         element={
-                            user ? (
+                            <ProtectedRoute>
                                 <Profile
                                     user={user}
                                     darkMode={darkMode}
                                     setDarkMode={setDarkMode}
                                 />
-                            ) : (
-                                <Navigate to="/login" />
-                            )
+                            </ProtectedRoute>
                         }
                     />
                     <Route path="*" element={<Navigate to="/" replace />} />
